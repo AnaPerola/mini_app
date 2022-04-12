@@ -55,6 +55,10 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+#A PDF generation plugin for Ruby on Rails
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+
 group :development, :test do
   #Rspec Gem
   gem 'rspec-rails'
