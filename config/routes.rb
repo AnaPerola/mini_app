@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :tasks 
 
+  resources :tasks_report, only: %i[index] 
+  get 'report', to: 'tasks_report#report'
+
   resources :profiles, only: %i[show new create update edit] do
     get 'private_page', on: :member
     post 'change_privacy', on: :member
