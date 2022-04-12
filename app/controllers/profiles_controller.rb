@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :public?, except: %i[private_page]
- 
+  before_action :set_profile, only: %i[show edit update]
+  before_action :public?, except: %i[private_page set_profile]
+
   def show 
   end
 
@@ -44,6 +45,7 @@ class ProfilesController < ApplicationController
   private 
 
   def profile_params
+    params.require(:profile).permit(:nickname, :bio)
   end 
 
   def privacy_params
@@ -62,5 +64,7 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def set_profile
+    @profile = current_user.profile
+  end
 end
-  
