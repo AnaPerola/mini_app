@@ -4,44 +4,46 @@ feature 'User can view tasks in TaskBoard' do
   scenario 'ordered by date'do
     user = create(:user)
     profile = create(:profile, user: user)
+    login_as(user)
+
     first_task = create(:task, user: user, title: 'first')
     second_task = create(:task, user: user, title: 'second')
-    login_as(user)
 
     visit root_path
     click_on 'Task Board'
 
-    expect(page).to have_css('h3', text: first_task.title)
-    expect(page).to have_css('h3', text: second_task.title)
+    expect(page).to have_content(first_task.title)
+    expect(page).to have_content(second_task.title)
   end
 
   scenario 'and only sees their own tasks'do
     user = create(:user)
     profile = create(:profile, user: user)
     other_user = create(:user, email: 'other@email.com')
+    login_as(user)
+    
     first_task = create(:task, user: user, title: 'first')
     second_task = create(:task, user: user, title: 'second')
     other_user_task = create(:task, user: other_user, title: 'other')
-    login_as(user)
 
     visit root_path
     click_on 'Task Board'
 
-    expect(page).to have_css('h3', text: first_task.title)
-    expect(page).to have_css('h3', text: second_task.title)
-    expect(page).not_to have_css('h3', text: other_user_task.title)
+    expect(page).to have_content(first_task.title)
+    expect(page).to have_content(second_task.title)
+    expect(page).not_to have_content(other_user_task.title)
   end
 
   scenario 'And can click on Task name to see task Page' do 
     user = create(:user)
     profile = create(:profile, user: user)
-    first_task = create(:task, user: user, title: 'first')
-    second_task = create(:task, user: user, title: 'second')
     login_as(user)
-
+    
+    first_task = create(:task, user: user, title: 'first')
+    
     visit root_path
     click_on 'Task Board'
-    click_on 'first'
+    click_on 'View Task'
 
     expect(current_path).to eq task_path(first_task)
   end

@@ -8,10 +8,11 @@ feature 'User can change shared status' do
 
     visit root_path
     click_on 'Create a Task'
-    fill_in 'Task Title', with: 'Test Task'
-    fill_in 'Description', with: 'Test Description'
-    select 'Medium', from: 'Priority'
-    select 'Public', from: 'Privacy' 
+    fill_in 'task[title]', with: 'Test Task'
+    fill_in 'task[description]', with: 'Test Description'
+    select 'medium', from: 'task[priority]'
+    select 'incomplete', from: 'task[status]' 
+    select 'Public', from: 'task[share]' 
     click_on 'Create Task'
 
     expect(Task.last.share).to eq true 
@@ -24,10 +25,11 @@ feature 'User can change shared status' do
 
     visit root_path
     click_on 'Create a Task'
-    fill_in 'Task Title', with: 'Test Task'
-    fill_in 'Description', with: 'Test Description'
-    select 'Medium', from: 'Priority'
-    select 'Private', from: 'Privacy' 
+    fill_in 'task[title]', with: 'Test Task'
+    fill_in 'task[description]', with: 'Test Description'
+    select 'medium', from: 'task[priority]'
+    select 'incomplete', from: 'task[status]' 
+    select 'Private', from: 'task[share]'
     click_on 'Create Task'
 
     expect(Task.last.share).to eq false 
@@ -42,13 +44,13 @@ feature 'User can change shared status' do
 
     visit root_path
     click_on 'Task Board'
-    click_on task.title
     click_on 'Edit Task'
 
-    fill_in 'Task Title', with: 'Test Task'
-    fill_in 'Description', with: 'Test Description'
-    select 'High', from: 'Priority'
-    select 'Public', from: 'Privacy' 
+    fill_in 'task[title]', with: 'Test Task'
+    fill_in 'task[description]', with: 'Test Description'
+    select 'high', from: 'task[priority]'
+    select 'incomplete', from: 'task[status]' 
+    select 'Public', from: 'task[share]' 
     click_on 'Update Task' 
 
     expect(Task.last.share).to eq true 
@@ -62,13 +64,13 @@ feature 'User can change shared status' do
 
     visit root_path
     click_on 'Task Board'
-    click_on task.title
     click_on 'Edit Task'
 
-    fill_in 'Task Title', with: 'Test Task'
-    fill_in 'Description', with: 'Test Description'
-    select 'High', from: 'Priority'
-    select 'Private', from: 'Privacy' 
+    fill_in 'task[title]', with: 'Test Task'
+    fill_in 'task[description]', with: 'Test Description'
+    select 'high', from: 'task[priority]'
+    select 'incomplete', from: 'task[status]' 
+    select 'Private', from: 'task[share]' 
     click_on 'Update Task'
 
     expect(Task.last.share).to eq false 
@@ -82,7 +84,7 @@ feature 'User can change shared status' do
 
     visit root_path
     click_on 'Task Board'
-    click_on task.title
+    click_on 'View Task'
     select 'Private', from: 'Change Privacy:'
     click_on 'Change Setting'
 
@@ -97,11 +99,11 @@ feature 'User can change shared status' do
 
     visit root_path
     click_on 'Task Board'
-    click_on task.title
+    click_on 'View Task'
     select 'Private', from: 'Change Privacy:'
     click_on 'Change Setting'
 
     expect(page).to have_content('This Task is Private')
   end
 
-  end
+end
