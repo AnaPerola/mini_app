@@ -1,0 +1,43 @@
+<!-- Tab Menu -->
+<div class='row justify-content-md-center'>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <%= link_to 'Newest', profile_comments_path(order: 'new'), class: ((params[:order] == 'new') ? "nav-link active" : "nav-link"), id: 'ord_new'%>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Oldest', profile_comments_path(order: 'old'), class: ((params[:order] == 'old') ? "nav-link active" : "nav-link"), id: 'ord_old'%>
+    </li>
+  </ul>
+</div> 
+  <!-- Comments -->
+<ul class='media-list'>
+  <% @comments.each do |comment| %> 
+  <li class="media">
+    <% if comment.user.profile.avatar.attached? %>
+    <%= image_tag comment.user.profile.avatar, 
+      class: 'float-left img-thumbnail thumbnail img-fluid col-2' %>
+      <% end %>
+      <div class="media-body">
+        <span class="text-muted pull-right">
+          <small class="text-muted">
+            <%= comment.created_at.strftime("Posted on %m/%d/%Y at: %I:%M%p") %>
+          </small>
+        </span>
+        <strong class="text-success"><%= link_to "@#{comment.user.profile.nickname}", profile_path(comment.user.profile)%></strong>
+        <p>
+        <%= comment.body %>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <small class='text-muted'> <%= link_to 'Original Task', 
+        task_path(comment.task)%> </small> 
+      </div>
+  </li>
+  <hr>
+  <br>
+  <% end %> 
+</ul> 
+</div>
