@@ -58,6 +58,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #A PDF generation plugin for Ruby on Rails
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
+#gem used to help manage user permissions
+gem 'cancancan'
 
 group :development, :test do
   #Rspec Gem
