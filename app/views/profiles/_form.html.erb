@@ -1,0 +1,31 @@
+<!-- Error Messages -->
+<% @profile.errors.full_messages.each do |error| %> 
+  <p><%= error %> </p> 
+<% end %>
+
+<!-- Form -->
+<%= form_with model: profile do |f| %>
+
+  <div class='col-lg-12' style='text-align: right;'>
+    <%= link_to 'Go Back', :back, class:'btn btn-outline-danger' %>
+  </div>
+
+  <div class='form-group p-1'>
+   <%= f.label :nickname, 'Your Nickname:'%>
+    <%= f.text_field :nickname, class: 'form-control', placeholder: 'Your Nickname' %>
+  </div>
+
+  <div class='form-group p-1'>
+    <%= f.label :bio, 'Your Bio:'%>
+    <%= f.text_area :bio, class: 'form-control mb-2', rows: '4'%>
+  </div>
+
+  <div class='form-group p-1'>
+    <%= f.label :avatar, 'Your Profile Picture' %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.submit class: 'btn btn-primary ml-2'%>
+  </div>
+<% end %>
