@@ -24,25 +24,30 @@
       <strong>Priority:</strong> 
       <%= @task.priority %>
     </p>
-    <div class='col-6'>
-      <%= form_for(@task, url: change_privacy_task_path, method: :post, class: 'form-inline') do |f| %> 
-        <div class='form-group'>
-          <strong class='text-center'><%= f.label :share, 'Change Privacy:' %></strong>
-          <%= f.select(:share, [['Private', false], ['Public', true]]) %> 
-          <%= f.hidden_field :task_id, value: params[:id] %> 
-          <%= f.submit 'Change Setting', class: 'btn btn-secondary p-1'%>
-        </div>
-      <% end %>
-    </div>
+    <% if current_user.id == @task.user_id %>
+      <div class='col-6'>
+        <%= form_for(@task, url: change_privacy_task_path, method: :post, class: 'form-inline') do |f| %> 
+          <div class='form-group'>
+            <strong class='text-center'><%= f.label :share, 'Change Privacy:' %></strong>
+            <%= f.select(:share, [['Private', false], ['Public', true]]) %> 
+            <%= f.hidden_field :task_id, value: params[:id] %> 
+            <%= f.submit 'Change Setting', class: 'btn btn-secondary p-1'%>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <div class="row">
     <div class="col-12">
       <%= render 'comments/form', comment: @comment %>
     </div>
   </div>
-  <%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-primary ml-2 mt-2' %></li>
-  <%= link_to 'Destroy', task_path(@task), class: 'btn btn-danger ml-2 mt-2', data: {
-                      method: :delete,
-                      confirm: 'Are you sure?'
-                    } %>
+  <% if current_user.id == @task.user_id %>
+    <%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-primary ml-2 mt-2' %></li>
+  
+    <%= link_to 'Destroy', task_path(@task), class: 'btn btn-danger ml-2 mt-2', data: {
+                        method: :delete,
+                        confirm: 'Are you sure?'
+                      } %>
+  <% end %>
 </div>

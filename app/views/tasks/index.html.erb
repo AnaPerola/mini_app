@@ -20,13 +20,18 @@
         <td class='p-1'><%= task.status %></td>
         <td class='p-1'><%= task.priority %></td>
         <td class='p-1'><%= link_to 'View Task', task_path(task) =%></td>
-        <td class='p-1'><%= link_to 'Edit Task', edit_task_path(task) =%></td>
-        <td class='p-1'>
-          <%= link_to 'Delete Task', task_path(task), data: {
-                    method: :delete,
-                    confirm: 'Are you sure?'
-                  }%>
-        </td>
+        <% if current_user.id == task.user_id %>
+          <td class='p-1'><%= link_to 'Edit Task', edit_task_path(task) =%></td>
+          <td class='p-1'>
+            <%= link_to 'Delete Task', task_path(task), data: {
+                      method: :delete,
+                      confirm: 'Are you sure?'
+                    }%>
+          </td>
+        <% else %>
+          <td class='p-1' style="color: red;"> without permission</td>
+          <td class='p-1' style="color: red;"> without permission</td>
+        <% end %>
       </tr>
     <% end%>
   </tbody>
