@@ -32,7 +32,7 @@
       </button>
       <div class="dropdown-menu">
         <% if current_user.admin? %>
-          <%= link_to ' Users', profile_path(current_user.profile), class: 'fa fa-users dropdown-item'%>
+          <%= link_to ' Users', users_path, class: 'fa fa-users dropdown-item'%>
         <% end %>
         <% if current_user.profile && current_user.profile.id %>
           <%= link_to '  My Profile', profile_path(current_user.profile), class: 'fa fa-cogs dropdown-item'%> 
