@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tasks do 
     post 'change_privacy', on: :member
     get 'private_page', on: :member
+    resources :comments, only: %i[create update edit destroy new]
   end
 
   resources :tasks_report, only: %i[index] 
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   resources :profiles, only: %i[show new create update edit] do
     get 'private_page', on: :member
     post 'change_privacy', on: :member
-    resources :comments
+    resources :comments, only: %i[index]
   end
 
   resources :pluses, only: %i[create destroy]
