@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
 
+  resources :users, only: %i[index]
+
   resources :tasks do 
     post 'change_privacy', on: :member
     get 'private_page', on: :member
+    resources :comments, only: %i[create update edit destroy new]
   end
 
   resources :tasks_report, only: %i[index] 

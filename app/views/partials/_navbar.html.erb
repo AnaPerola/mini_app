@@ -30,11 +30,14 @@
       <button type="button" class="btn btn-outline-primary"><i class='fa fa-user-circle'></i>  Account Settings</button> 
       <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       </button>
-      <div class="dropdown-menu"> 
+      <div class="dropdown-menu">
+        <% if current_user.admin? %>
+          <%= link_to ' Users', users_path, class: 'fa fa-users dropdown-item'%>
+        <% end %>
         <% if current_user.profile && current_user.profile.id %>
           <%= link_to '  My Profile', profile_path(current_user.profile), class: 'fa fa-cogs dropdown-item'%> 
           <%= link_to '  My Comments', profile_comments_path(current_user.profile), class: 'fa fa-comments dropdown-item' %>
-    <% end %>
+        <% end %>
       </div>
     </div> 
 

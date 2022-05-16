@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy 
   has_many :pluses, dependent: :destroy 
   has_many :minuses, dependent: :destroy
+
+  enum role: { common: 0, admin: 1 }
 end

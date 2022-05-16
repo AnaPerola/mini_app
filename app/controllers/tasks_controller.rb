@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   before_action :public?, except: %i[private_page find_task index create show new]
 
   def index
-    @tasks = Task.where(user_id: current_user.id)
+    @tasks = Task.all.where(share: true)
   end
 
   def show 
