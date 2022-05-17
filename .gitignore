@@ -41,3 +41,6 @@ coverage
 
 #
 ToDoList.md
+
+*.lock
+.env
