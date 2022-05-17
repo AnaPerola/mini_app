@@ -54,7 +54,7 @@
       <% if current_user == @profile.user %> 
         <%= link_to 'Edit Info', edit_profile_path(@profile), class: 'text-white btn btn-primary col-2'%>
       <% end %>
-      <%= link_to 'Go Back', :back, class: 'btn btn-secondary col-2' %>
+      <%= link_to 'Go Back', root_path, class: 'btn btn-secondary col-2' %>
     </div>
     <br>
     <br>

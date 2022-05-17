@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_141354) do
+ActiveRecord::Schema.define(version: 2022_04_26_164645) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_141354) do
     t.integer "priority", default: 0
     t.integer "user_id"
     t.integer "status", default: 0
-    t.boolean "share"
+    t.boolean "share", default: true
     t.integer "comment_id"
     t.index ["comment_id"], name: "index_tasks_on_comment_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_141354) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "profile_id"
     t.integer "comment_id"
+    t.integer "role", default: 0
     t.index ["comment_id"], name: "index_users_on_comment_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_id"], name: "index_users_on_profile_id"
