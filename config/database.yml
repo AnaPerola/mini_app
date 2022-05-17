@@ -1,0 +1,19 @@
+default: &default
+  adapter: sqlite3
+  username: your_username
+  password: your_password
+  host: 
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: todolist_development
+
+test:
+  <<: *default
+  database: todolist_test
+  
+production:
+  <<: *default
+  database: todolist_production
