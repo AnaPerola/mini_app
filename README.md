@@ -8,19 +8,21 @@
   <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-pré-requisitos">Pré-requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-iniciando-o-projeto">Iniciando Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-executando-testes">Testes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-executando-testes">Testes</a>&nbsp;&nbsp;&nbsp;
 </p>
 
-  ![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)  
-  ![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) 
-  ![release-date](https://img.shields.io/static/v1?label=release-date&message=May-2022&color=orange)
- 
+<p align="center">
+  <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/static/v1?label=release-date&message=May-2022&color=orange"/>
+  <img src="https://img.shields.io/static/v1?label=status&message=Development&color=green"/>
+</p>
 
 # ✨ *Tasks Manager*
 
 ## 💻 Projeto:
 
-Este projeto foi criado com o objetivo de conseguirmos cadastrar atividades do diárias à serem realizadas, junto com uma descrição, possibilitando a inclusão de comentários e geração de relatório.
+Este projeto foi criado com o objetivo de cadastrar atividades do diárias à serem realizadas, junto com uma descrição, possibilitando a inclusão de comentários e geração de relatório.
 
 ## 🚀 Técnologias
 
@@ -34,11 +36,10 @@ Este projeto foi criado com o objetivo de conseguirmos cadastrar atividades do d
 
 ## 🔨 Funcionalidades
 
-- [X] `Tipo de feedback`: Seleção de tipo de feedback para envio.
-- [X] `Descrição de feedback`: Descrição em campo de formulário para inserir detalhes qual problema/ideia/outro tipo de feedback desejavel para envio.
-- [X] `Screenshot`: Captura a tela atual que se refere ao feedback.
-- [X] `Envio de Feedback`: Envio deste formulario preenchido com o screenshot para o Backend fazer as devidas validações.
-
+- [] `Cadastro de usuário`: 
+- [] `Realização de login`: 
+- [] `Cadastro de atividade`: 
+- [] `Cadastro de comentário`: 
 #
 
 ## 📋 Pré-requisitos
