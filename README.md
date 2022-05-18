@@ -56,6 +56,12 @@ Este projeto foi criado com o objetivo de cadastrar atividades do diárias à se
 ```console
 $ git clone git@github.com:AnaPerola/mini_app.git
 ```
+1 - Crie um arquivo .env e insira suas variáveis de ambiente
+```console
+POSTGRES_USER=insert_username
+POSTGRES_PASSWORD=insert_password
+POSTGRES_DB=miniapp
+```
 2 - Execute o comando para instalar todas as dependências
 ```console
 $ docker build
