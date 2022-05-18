@@ -42,7 +42,7 @@ Este projeto foi criado com o objetivo de cadastrar usuários e atividades do di
 - [] `Cadastro de usuário`: 
 - [] `Realização de login`: 
 - [] `Cadastro de atividade`: 
-- [] `Cadastro de comentário`: 
+- [] `Cadastro de comentário`:
 #
 
 ## 📋 Pré-requisitos
@@ -75,6 +75,9 @@ $ docker-compose up -d
 ```
 Se tudo ocorreu bem, poderá acessar a página http://localhost:3000
 
+# Executando Testes
+
+Os testes foram criados com o auxilio do rspec, factory_bot_rails, capybara
 #
 
 <div align="center" style="display:flex; padding:5px; ">
@@ -102,6 +105,11 @@ Se tudo ocorreu bem, poderá acessar a página http://localhost:3000
     alt="Ana-Rspec"
     style="height:40px; width:40px;"
     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rspec/rspec-original.svg" 
+  />
+  <img
+    alt="Ana-Bootstrap"
+    style="height:40px; width:40px;"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" 
   />
 </div>          
 
