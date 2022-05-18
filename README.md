@@ -13,16 +13,19 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
+</p>
+<p align="center">
   <img src="https://img.shields.io/static/v1?label=release-date&message=May-2022&color=orange"/>
-  <img src="https://img.shields.io/static/v1?label=status&message=Development&color=green"/>
+  <img src="https://img.shields.io/static/v1?label=status&message=Development&color=green"/>  
 </p>
 
 # ✨ *Tasks Manager*
 
 ## 💻 Projeto:
 
-Este projeto foi criado com o objetivo de cadastrar atividades do diárias à serem realizadas, junto com uma descrição, possibilitando a inclusão de comentários e geração de relatório.
+Este projeto foi criado com o objetivo de cadastrar usuários e atividades do diárias à serem realizadas, junto com uma descrição, possibilitando a inclusão de comentários e geração de relatório.
 
 ## 🚀 Técnologias
 
