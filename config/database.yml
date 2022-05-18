@@ -1,18 +1,18 @@
 default: &default
-  adapter: sqlite3
-  username: your_username
-  password: your_password
-  host: 
+  host: db
   encoding: unicode
+  adapter: postgresql
+  username: <%= ENV.fetch("POSTGRES_USER") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: todolist_development
+  database: <%= ENV.fetch("POSTGRES_DB") %>_development
 
 test:
   <<: *default
-  database: todolist_test
+  database: <%= ENV.fetch("POSTGRES_DB") %>_test
   
 production:
   <<: *default
