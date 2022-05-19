@@ -67,7 +67,7 @@ POSTGRES_DB=miniapp
 ```
 2 - Execute o comando para instalar todas as dependências
 ```console
-$ docker build
+$ docker build .
 ```
 3 - Suba o projeto 
 ```console
