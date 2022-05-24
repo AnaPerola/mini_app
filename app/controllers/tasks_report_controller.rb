@@ -1,6 +1,6 @@
 class TasksReportController < ApplicationController
   def index
-    @tasks = Task.where(user_id: current_user.id).order(comments: :asc)
+    @tasks = Task.where(user_id: current_user.id)
   end
 
   def report
