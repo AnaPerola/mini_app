@@ -73,6 +73,11 @@ $ docker build .
 ```console
 $ docker-compose up -d
 ```
+3 - Crie o banco de dados e atualize 
+```console
+$ docker-compose exec app bundle exec rails db:create db:migrate
+```
+
 Se tudo ocorreu bem, poderá acessar a página http://localhost:3000
 
 # Executando Testes
@@ -110,6 +115,16 @@ Os testes foram criados com o auxilio do rspec, factory_bot_rails, capybara
     alt="Ana-Bootstrap"
     style="height:40px; width:40px;"
     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" 
+  /> 
+  <img
+    alt="Ana-Yarn"
+    style="height:40px; width:40px;"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yarn/yarn-original.svg" 
+  />
+  <img
+    alt="Ana-Node"
+    style="height:40px; width:40px;"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
   />
 </div>          
 
