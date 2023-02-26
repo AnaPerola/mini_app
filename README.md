@@ -132,4 +132,5 @@ Os testes foram criados com o auxilio do rspec, factory_bot_rails, capybara
 ⌨️ com ❤️ https://github.com/anaperola 😊
 
 ---
+ ✅ Concluído
 ##### ⭐ Marque esse projeto com uma estrela
