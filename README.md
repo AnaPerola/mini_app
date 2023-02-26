@@ -39,10 +39,10 @@ Este projeto foi criado com o objetivo de cadastrar usuários e atividades do di
 
 ## 🔨 Funcionalidades
 
-- [] `Cadastro de usuário`: 
-- [] `Realização de login`: 
-- [] `Cadastro de atividade`: 
-- [] `Cadastro de comentário`:
+- [ ] `Cadastro de usuário`: 
+- [ ] `Realização de login`: 
+- [ ] `Cadastro de atividade`: 
+- [ ] `Cadastro de comentário`:
 #
 
 ## 📋 Pré-requisitos
